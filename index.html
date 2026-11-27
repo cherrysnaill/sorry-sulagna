@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I'm Sorry, Sulagna ❤️</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #ffc3d6, #fff1f5);
+      font-family: Georgia, serif;
+    }
+
+    .card {
+      max-width: 430px;
+      margin: 20px;
+      padding: 40px 30px;
+      text-align: center;
+      background: white;
+      border-radius: 24px;
+      box-shadow: 0 15px 40px rgba(190, 70, 110, 0.25);
+    }
+
+    h1 { color: #c94c70; }
+
+    p {
+      color: #5d4650;
+      line-height: 1.7;
+      font-size: 18px;
+    }
+
+    button {
+      margin: 10px 5px 0;
+      padding: 12px 18px;
+      border: none;
+      border-radius: 999px;
+      background: #c94c70;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover { background: #a9385a; }
+
+    #hearts {
+      min-height: 70px;
+      margin-top: 15px;
+      color: #c94c70;
+      font-size: 28px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>I'm so sorry, Sulagna ❤️</h1>
+
+    <p>
+      I never meant to hurt you. Your feelings matter deeply to me,
+      and I regret what I did. Please forgive me.
+      I promise to listen better and be more thoughtful.
+    </p>
+
+    <button onclick="showLove()">Please forgive me? 🥺</button>
+    <div id="hearts" aria-live="polite"></div>
+  </div>
+
+  <script>
+    function showLove() {
+      document.getElementById("hearts").textContent =
+        "❤️ Thank you for giving us a chance! ❤️";
+    }
+  </script>
+</body>
+</html>
