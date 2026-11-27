@@ -3,77 +3,137 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>I'm Sorry, Sulagna ❤️</title>
+  <meta name="theme-color" content="#f8f5f2">
+  <meta name="description" content="A sincere note for Sulagna.">
+  <title>A Note for Sulagna</title>
   <style>
+    :root {
+      color-scheme: light;
+      --ink: #34312f;
+      --muted: #716b67;
+      --rose: #a85f6e;
+      --rose-dark: #874957;
+      --paper: #fffefa;
+      --line: #eee7e1;
+    }
+
     * { box-sizing: border-box; }
 
     body {
-      margin: 0;
       min-height: 100vh;
+      margin: 0;
+      padding: 28px 18px;
       display: grid;
       place-items: center;
-      background: linear-gradient(135deg, #ffc3d6, #fff1f5);
-      font-family: Georgia, serif;
+      background:
+        radial-gradient(ellipse at 12% 14%, rgba(232, 210, 203, .45), transparent 34%),
+        radial-gradient(ellipse at 89% 84%, rgba(221, 225, 214, .55), transparent 32%),
+        #f8f5f2;
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     .card {
-      max-width: 430px;
-      margin: 20px;
-      padding: 40px 30px;
+      width: min(100%, 560px);
+      padding: clamp(32px, 7vw, 58px);
+      background: var(--paper);
+      border: 1px solid rgba(115, 93, 82, .1);
+      border-radius: 22px;
+      box-shadow: 0 22px 70px rgba(67, 53, 45, .1);
       text-align: center;
-      background: white;
-      border-radius: 24px;
-      box-shadow: 0 15px 40px rgba(190, 70, 110, 0.25);
+      animation: arrive .7s ease-out both;
     }
 
-    h1 { color: #c94c70; }
+    .mark {
+      display: grid;
+      place-items: center;
+      width: 58px;
+      height: 58px;
+      margin: 0 auto 25px;
+      border-radius: 50%;
+      background: #f5e9e7;
+      color: var(--rose);
+      font-size: 25px;
+    }
 
-    p {
-      color: #5d4650;
-      line-height: 1.7;
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--rose);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .19em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(34px, 8vw, 48px);
+      font-weight: 400;
+      letter-spacing: -.035em;
+      line-height: 1.12;
+    }
+
+    .divider {
+      width: 46px;
+      height: 1px;
+      margin: 25px auto;
+      background: #d7b6b5;
+    }
+
+    .message {
+      max-width: 410px;
+      margin: 0 auto;
+      color: #5e5854;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 17px;
+      line-height: 1.85;
+      text-align: left;
+    }
+
+    .message p { margin: 0 0 16px; }
+    .message p:last-child { margin-bottom: 0; }
+
+    .signature {
+      margin: 28px 0 0;
+      color: var(--rose-dark);
+      font-family: Georgia, "Times New Roman", serif;
       font-size: 18px;
+      font-style: italic;
     }
 
-    button {
-      margin: 10px 5px 0;
-      padding: 12px 18px;
-      border: none;
-      border-radius: 999px;
-      background: #c94c70;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
+    .small-note {
+      margin: 25px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.6;
     }
 
-    button:hover { background: #a9385a; }
+    @keyframes arrive {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-    #hearts {
-      min-height: 70px;
-      margin-top: 15px;
-      color: #c94c70;
-      font-size: 28px;
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; }
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>I'm so sorry, Sulagna ❤️</h1>
+  <main class="card">
+    <div class="mark" aria-hidden="true">♡</div>
+    <p class="eyebrow">A note from the heart</p>
+    <h1>I'm sorry, Sulagna.</h1>
+    <div class="divider" aria-hidden="true"></div>
 
-    <p>
-      I never meant to hurt you. Your feelings matter deeply to me,
-      and I regret what I did. Please forgive me.
-      I promise to listen better and be more thoughtful.
-    </p>
+    <div class="message">
+      <p>I’m truly sorry for hurting you. I understand that my actions affected you, and I don’t want to dismiss or minimize how you feel.</p>
+      <p>You matter so much to me. I’m going to listen, reflect, and do my best to be more thoughtful—not just say the right words.</p>
+      <p>You don’t have to respond or forgive me before you’re ready. I wanted you to know that I care, and I’m sorry.</p>
+    </div>
 
-    <button onclick="showLove()">Please forgive me? 🥺</button>
-    <div id="hearts" aria-live="polite"></div>
-  </div>
-
-  <script>
-    function showLove() {
-      document.getElementById("hearts").textContent =
-        "❤️ Thank you for giving us a chance! ❤️";
-    }
-  </script>
+    <p class="signature">With love</p>
+    <p class="small-note">Take all the time you need. ♡</p>
+  </main>
 </body>
 </html>
